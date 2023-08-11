@@ -36,11 +36,11 @@ public class TrainerController {
 		Course c=tService.addCourse(course);
 		if(c!=null)
 		{
-		return "/trainerHome";
+		return "trainerHome";
 		}
 		else
 		{
-			return "/createCourseFail";
+			return "createCourseFail";
 		}
 	}
 	
@@ -60,7 +60,7 @@ public class TrainerController {
 		
 		tService.saveCourse(course);
 		
-		return "/trainerHome";
+		return "trainerHome";
 	}
 	@GetMapping("/showCourses")
 	public String showCourses(Model model) {
