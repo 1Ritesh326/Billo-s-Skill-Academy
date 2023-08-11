@@ -114,45 +114,11 @@ public class NavController {
 	public String courses() {
 		return "courses";
 	}
-	@GetMapping("/course")
-	public String course() {
-		return "course";
-	}
+	
 	
 	@GetMapping("/myCourses")
 	public String myCourses() {
 		return "myCourses";
-	}
-	@GetMapping("/teacher")
-	public String teacher() {
-		return "teacher";
-	}
-	@GetMapping("/index")
-	public String indexx() {
-		return "index";
-	}
-	@GetMapping("/contact")
-	public String contact() {
-		return "contact";
-	}
-	@GetMapping("/about")
-	public String about() {
-		return "about";
-	}
-	@GetMapping("/blog")
-	public String blog() {
-		return "blog";
-	}
-	@GetMapping("/single")
-	public String single() {
-		return "contact";
-	}
-	
-	
-	
-	
-	
-	
-	
+	}	
 	
 }
