@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bill's Skill Academy</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('@{/images/carousel-9.jpg}'); /* Replace with your image path */
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .header {
+    background-color: #fb9f3a;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  .header {
+    background-color: #fb9f3a;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .logo img {
+    width: 220px;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 200px 0px 50px 30px; /* Reduced margin-bottom */
+    padding: 20px;
+    padding-right:0px;
+    background-color:#44425A;
+  /*  background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha value as needed */
+    background-image: url('@{/images/carousel-9.jpg}'); /* Replace with your image path */
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: right center;
+    border-radius: 10px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fb9f3a;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: #f58220;
+  }
+  .footer {
+    text-align: left;
+    padding: 20px;
+    background-color: #222222;
+    color: #fff;
+    font-size: 14px;
+  }
+  .footer p {
+    margin: 5px 0;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer p img {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+  }
+  .made-with-love {
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img class="logo" th:src="@{/images/logo2.png}" alt="Your Logo">
+    </div>
+    <nav>
+      <a href="#" class="btn">Home</a>
+      <a href="#" class="btn">About</a>
+      <a href="#" class="btn">Teachers</a>
+      <a href="#" class="btn">Contact Us</a>
+    </nav>
+  </div>
+  <div class="container">
+    <h2 style="color: #fb9f3a; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Welcome to <span style="color: White;">B</span>illo's Skill Academy!!</h2>
+    <p style="color: #ffffff;">Unlock your potential with our diverse range of online courses.</p>
+    <a href="/login" class="btn">Login</a>
+    <a href="/register" class="btn">Register</a>
+  </div>
+  <div class="footer">
+    <p><img th:src="@{/images/email.png}" alt="Email"> ritesh@example.com</p>
+    <p><img th:src="@{/images/location.png}"alt="Location"> City, Country</p>
+    <p><img th:src="@{/images/contact.png}" alt="Mobile"> +123-456-7890</p>
+    <p class="made-with-love">Made with ❤️ by Ritesh!!</p>
+  </div>
+</body>
+</html>

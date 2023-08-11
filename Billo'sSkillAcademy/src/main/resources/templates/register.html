@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #44425A;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form {
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            font-family: 'Pacifico', cursive;
+            font-size: 32px;
+            color: #FFA500;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+        }
+        .input-container {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .show-password-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .choice-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .role-label {
+            margin-right: 10px;
+            color: #555;
+        }
+        .choice-button {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            margin-right: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+        .choice-button:checked {
+            border-color: #FFA500;
+            background-color: #FFA500;
+        }
+        .choice-button:checked::before {
+            content: "\f00c"; /* FontAwesome checkmark icon */
+            font-family: "Font Awesome 5 Free";
+            display: block;
+            text-align: center;
+            color: #fff;
+        }
+        input[type="submit"] {
+            background-color: #FFA500;
+            color: #fff;
+            cursor: pointer;
+        }
+        .button:hover {
+            opacity: 0.8;
+        }
+        .back-link {
+            color: #FFA500;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .login-link {
+            color: #555;
+            text-decoration: none;
+        }
+        .login-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <form action="/addUser" method="post">
+        <h2><span style="color: #FFA500">R</span>egistration Form</h2>
+        
+        <!-- Name Input -->
+        <div class="input-container">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+        </div>
+
+        <!-- Email Input -->
+        <div class="input-container">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+
+        <!-- Password Input -->
+        <div class="input-container password-container">
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <span class="show-password-icon" onclick="togglePasswordVisibility()">
+                <i class="far fa-eye"></i>
+            </span>
+        </div>
+        
+        <!-- Choice Buttons in a Single Line -->
+        <div class="choice-container">
+            <input type="radio" id="trainer" name="role" value="trainer" class="choice-button">
+            <label for="trainer" class="role-label">Trainer</label>
+
+            <input type="radio" id="student" name="role" value="student" class="choice-button">
+            <label for="student" class="role-label">Student</label>
+        </div>
+
+        <input type="submit" value="Submit" class="button">
+        <p><a href="/" class="back-link">Go back to home page</a></p>
+        <p><a href="login" class="login-link">Existing user? Login here</a></p>
+    </form>
+  
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById("password");
+            const icon = document.querySelector(".show-password-icon i");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                icon.classList.remove("far", "fa-eye");
+                icon.classList.add("fas", "fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                icon.classList.remove("fas", "fa-eye-slash");
+                icon.classList.add("far", "fa-eye");
+            }
+        }
+    </script>
+</body>
+</html>
